@@ -1,0 +1,15 @@
+<form method="POST" action=".">
+    {% csrf_token %}
+    <h2>Добавление продукта</h2>
+        <input type="text" name="name_prod"> Name
+        <select name="category">
+            {% for cat in categories %}
+            <option value="{{cat.id}}">{{cat.name_cat}}</option>
+            {% endfor %}
+        </select>
+        <input name="inv_number">inv num</input>
+        <input name="start_price">start price</input>
+        <input name="rem_price">rem price</input>
+
+    <button type="submit">Создать</button>
+</form>
